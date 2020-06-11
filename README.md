@@ -7,6 +7,7 @@
 # Requisitos previos.
 
 - Tener instalado Vagrant y VirtualBox.
+
 	https://www.virtualbox.org/wiki/Downloads
 	
 	https://www.vagrantup.com/downloads.html
