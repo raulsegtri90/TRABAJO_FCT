@@ -8,6 +8,7 @@
 
 - Tener instalado Vagrant y VirtualBox.
 	https://www.virtualbox.org/wiki/Downloads
+	
 	https://www.vagrantup.com/downloads.html
 
 - Descargar una imagen de ubuntu (en este caso bento/ubuntu-16.04):
