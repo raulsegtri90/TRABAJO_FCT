@@ -1,0 +1,33 @@
+---
+# Esta tarea se ejecutará en el equipo con IP 192.168.33.11
+# como usuario root.
+# En él se instalará el servicio de apache2 en su última versión y 
+# se iniciará.
+# Para ello se utiliza un task (tarea) que llama a un handler.
+- hosts: 192.168.33.11
+  remote_user: root
+  tasks:
+    - name: Install Apache 2 package
+      apt: name=apache2 state=latest
+      notify: start apache2
+
+  handlers:
+    - name: start apache2
+      service: name=apache2 state=started enabled=yes
+
+# Este playbook se ejecutará en el equipo con IP 192.168.33.12
+# como usuario root.
+# En él se instalará el servicio de nginx en su última versión y 
+# se iniciará.
+# Para ello se utiliza un task (tarea) que llama a un handler.
+- hosts: 192.168.33.12
+  remote_user: root
+  tasks:
+    - name: Install nginx package
+      apt: name=nginx state=latest
+      notify: start nginx
+
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started enabled=yes
+...

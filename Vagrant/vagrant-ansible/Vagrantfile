@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+# Esta máquina usará ubuntu 16.04, una IP privada (192.168.33.10), 
+# Una carpeta compartida desde el directorio donde esté el 
+# Vagrantfile llamado "shared" y en la máquina virtual estará
+# ubicado en el directorio /home/usuario/projects.
+#Ejecutará durante el proceso de arranque un script para actualizar
+# e instalar ansible.
+# El provider por defecto en vagrant es VirtualBox.
+# Por último, tendrá 512MB de RAM y una CPU.
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+	config.vm.box = "bento/ubuntu-16.04"
+	config.vm.network "private_network", ip: "192.168.33.10"
+	config.vm.synced_folder "shared", "/home/vagrant/projects"
+	config.vm.provision "shell", path: "config-ansible.sh"
+	config.vm.hostname = "controller"
+	config.vm.provider "virtualbox" do |v|
+		v.memory = 512
+		v.cpus = 1
+	end
+end

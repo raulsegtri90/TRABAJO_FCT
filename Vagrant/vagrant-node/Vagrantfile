@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+# Esta máquina contará con un S.O. ubuntu 16.04
+# Una Ip privada (192.168.33.11)
+# Nombre del host (Apache)
+# Un GB de memoria RAM y una CPU
+	config.vm.define "Apache" do |app|
+		app.vm.box = "bento/ubuntu-16.04"
+		app.vm.network "private_network", ip: "192.168.33.11"
+		app.vm.hostname = "Apache"
+		app.vm.provider "virtualbox" do |v|
+			v.memory = 1024
+			v.cpus = 1
+		end
+	end
+# Esta máquina contará con un S.O. ubuntu 16.04
+# Una Ip privada (192.168.33.12)
+# Nombre del host (Nginx)
+# Un GB de memoria RAM y una CPU
+	config.vm.define "Nginx" do |app|
+		app.vm.box = "bento/ubuntu-16.04"
+		app.vm.network "private_network", ip: "192.168.33.12"
+		app.vm.hostname = "Nginx"
+		app.vm.provider "virtualbox" do |v|
+			v.memory = 1024
+			v.cpus = 1
+		end
+	end
+end

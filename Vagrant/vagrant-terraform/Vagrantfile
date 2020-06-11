@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+# Esta máquina contará con un S.O. ubuntu 16.04.
+# Una Ip privada (192.168.33.13).
+# Una carpeta compartida en el directorio donde esté ubicado el
+# Vagrantfile y en la máquina virtual en /home/vagrant/projects.
+# Nombre del host (Terraform).
+# Dos GB de memoria RAM y una CPU.
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+	config.vm.box = "bento/ubuntu-16.04"
+	config.vm.network "private_network", ip: "192.168.33.13"
+	config.vm.synced_folder "shared", "/home/vagrant/projects"
+	config.vm.hostname = "Terraform"
+	config.vm.provider "virtualbox" do |v|
+		v.memory = 2048
+		v.cpus = 1
+	end
+end
