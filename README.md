@@ -157,13 +157,13 @@ Se redigirá a una página de vocareum. En esta página habrá que hacer clic en
 
 - Cuando se haya creado la instancia se puede comprobar en la cuenta de AWS en EC2 - instancias.
 
+- También se creará un fichero de estado que si se modifica algo y se hace un terraform plan dirá lo que se ha modificado con respecto al fichero de estado.
+
 
 
 # Información de los ficheros.
 
 - Se encontrarán comentarios con la función de lo más importante de cada fichero usado en la realización de esta práctica.
-
-- También se creará un fichero de estado que si se modifica algo y se hace un terraform plan dirá lo que se ha modificado con respecto al fichero de estado.
 
 
 
