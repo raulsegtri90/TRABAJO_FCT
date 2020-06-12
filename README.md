@@ -8,9 +8,9 @@
 
 - Tener instalado Vagrant y VirtualBox.
 
-	https://www.virtualbox.org/wiki/Downloads
-	
 	https://www.vagrantup.com/downloads.html
+	
+	https://www.virtualbox.org/wiki/Downloads	
 
 - Descargar una imagen de ubuntu (en este caso bento/ubuntu-16.04):
 
@@ -19,14 +19,14 @@
 - Creación de los Vagrantfile y fichero de instalación de Ansible.
 
 	Estarán en los directorios vagrant-ansible, vagrant-node y vagrant-terraform
+	
+- Se Ejecutarán las máquinas con el siguiente comando dentro de cada directorio:
+	
+	vagrant up
 
 
 
 # Comenzando con el trabajo.
-
-- Se Ejecutarán las máquinas con el siguiente comando dentro de cada directorio:
-	
-	vagrant up
 
 - Una vez arrancadas las máquinas, se accede a la máquina de Ansible con el siguiente comando:
 
