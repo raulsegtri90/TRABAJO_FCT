@@ -107,6 +107,7 @@
 - Creamos la ruta /downloads/terraform:
 
 	mkdir /downloads/terraform -p
+	
 	cd /downloads/terraform
 
 - Cuando se tengan estas herramientas instaladas, se descarga de la página oficial de Terraform la versión deseada copiando el enlace (en este caso para la máquina Linux 64bits):
